@@ -1,6 +1,14 @@
 import express from 'express';
+import router from './router.js';
+import bodyParser from 'body-parser';
+
 let app = express();
 
-app.listen('8080', ()=> {
-  console.log('App listen on port 8080');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use('/', router);
+
+app.listen('1407', () => {
+  console.log('App listen on port 1407');
 });
