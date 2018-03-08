@@ -128,7 +128,7 @@ router.post("/listofusers", function (req, res) {
 });
 
 // Show the Users's message
-router.get("/messages", function (req, res) {
+router.post("/messages", function (req, res) {
   var body = req.body;
   if (body.email && body.password && body.token) {
     User.findOne({ email: body.email }, function (err, result) {
